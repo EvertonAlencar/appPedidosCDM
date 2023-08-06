@@ -1,4 +1,5 @@
 import datetime
+from time import sleep
 
 orders = [
     {
@@ -21,7 +22,7 @@ Apartamento: {0}
 Numero da mesa: {1}
 Data: {2}
 ------------------------------------------------
-Pedidos                                      qtd
+Pedidos
 {3}
 
 observacao: {4}
@@ -32,6 +33,6 @@ observacao: {4}
 
 
 """.format(getApartamentNumber,getTableNumber,datetime.datetime.now().strftime('%d/%m/%y'),getBodyOrder,getObservation)
-    header = bytes(main,'ISO-8859-1')
-    
-    return header
+    header = bytes(main,'utf-8')
+    sleep(10)
+    return  header
