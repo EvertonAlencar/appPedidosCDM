@@ -3,8 +3,8 @@ aplicativo para lançamento de pedidos integrado a impressora não-fiscal desenv
 
 ## instalando dependencias
 - Flask
-    pip install flask
+    -pip install flask
 - requests
-    pip intall requests
+    -pip intall requests
 - pywin32
-    pip install pywin32
+    -pip install pywin32
