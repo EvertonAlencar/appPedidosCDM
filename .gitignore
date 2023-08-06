@@ -1,0 +1,4 @@
+#iginorar ambiente virtual
+.venv
+#ignorar cache python
+__pycache__
