@@ -5,7 +5,7 @@ import printOrder
 
 app = Flask(__name__)
 
-@app.route('/obter', methods=['GET'])
+@app.route('/getData', methods=['GET'])
 def mostrarPedidos():
     return jsonify(assembleOrder.orders)
 
@@ -15,7 +15,7 @@ def receiveOrder():
     order = assembleOrder.orders[0]
     receivedOrder = request.get_json()
     order.update(receivedOrder)
-    printOrder.printOrder(assembleOrder.assembleOrder(order['apartamentNumber'],order['tableNumber'],order['body'],order['observation']))
+    printOrder.printOrder(assembleOrder.assembleOrder(order['apartamentNumber'],order['tableNumber'],order['body'],order['observation'],order['clothesDescription']))
     return jsonify(assembleOrder.orders)
 
-app.run('0.0.0.0')
+app.run('0.0.0.0', debug=True)

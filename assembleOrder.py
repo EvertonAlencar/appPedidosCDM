@@ -7,15 +7,17 @@ orders = [
         'apartamentNumber' : '',
         'tableNumber' : '',
         'body' : '',
-        'observation': ''
+        'observation': '',
+        'clothesDescription': ''
     }
 ]
 
-def assembleOrder(apartamentNumber,tableNumber,bodyOrder,observation):
+def assembleOrder(apartamentNumber,tableNumber,bodyOrder,observation,clothesDescription):
     getApartamentNumber = apartamentNumber
     getTableNumber = tableNumber
     getBodyOrder = bodyOrder
     getObservation = observation
+    getClothesDescription = clothesDescription
     main = """
 ------------------------------------------------
 Apartamento: {0}
@@ -25,14 +27,14 @@ Data: {2}
 Pedidos
 {3}
 
-observacao: {4}
+Observacao: {4}
+Vestimentas: {5}
 ------------------------------------------------
 
 
 
 
 
-""".format(getApartamentNumber,getTableNumber,datetime.datetime.now().strftime('%d/%m/%y'),getBodyOrder,getObservation)
+""".format(getApartamentNumber,getTableNumber,datetime.datetime.now().strftime('%d/%m/%y'),getBodyOrder,getObservation,getClothesDescription)
     header = bytes(main,'utf-8')
-    sleep(10)
     return  header
